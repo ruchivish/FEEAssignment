@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FrontEndExpertiseAssigment.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.Services.DelegatedAuthorization;
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.IO;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApplication10.Models;
@@ -30,15 +33,17 @@ namespace WebApplication10.Controllers
             //    return NotFound();
             //}
 
-            List<Course> course = new List<Course>() { 
-                new Course()
-                {
-                    Title = "Introduction to C#",
-                    Description = "C# is object oriented language"
-                }
-            };
+            //List<Course> course = new List<Course>() { 
+            //    new Course()
+            //    {
+            //        Title = "Introduction to C#",
+            //        Description = "C# is object oriented language"
+            //    }
+            //};
+            string Json = System.IO.File.ReadAllText(Directory.GetCurrentDirectory() + "\\Controllers\\Catalog_DataSet_V1.json");
+            var courses = JsonConvert.DeserializeObject<List<Courses>>(Json);
 
-            return Ok(course);
+            return Ok(courses);
 
         }
     }
