@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-fetch-course',
-  templateUrl: './course.component.html'
+  templateUrl: './course.component.html',
+  styleUrls: ['./course.component.css']
 })
 export class CourseComponent{
   public courses: Courses[];
@@ -19,21 +20,24 @@ export class CourseComponent{
       //console.log(this.courses);
     }, error => console.error(error));
   }
+  checked() {
+    return this.courses.filter(item => { return item.checked; });
+  }
 }
 
-interface Courses {
+export interface Courses {
   id: string;
   course: Course;
   type: string;
+  checked: boolean;
 
 }
 
-interface Course {
+export interface Course {
   name: string;
   description: string;
   tags: Tag[];
   duration: number;
-
 }
 
 interface Tag {

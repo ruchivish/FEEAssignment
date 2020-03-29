@@ -23,4 +23,17 @@ code {
   font-weight: 600;
 }
 
+@media (min-width: 576px) {
+  .navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 1.5rem;
+  }
+}
 
+.nav-item{
+    display: flex;
+}
+
+.fa, .fas {
+  padding-top: 12px;
+  cursor: pointer;
+}

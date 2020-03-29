@@ -1,20 +1,30 @@
-<h1 id="tableLabel">Courses</h1>
-
-<p>This component demonstrates fetching data from the server.</p>
+<h1 id="tableLabel">Courses Catalog</h1>
 
 <p *ngIf="!courses"><em>Loading...</em></p>
+<!--<div class="form form-inline">
+  <div *ngFor="let filterItem of courses; let i = index;" class="form-check" style="padding-right:20px;">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" [(ngModel)]="filterItem.checked" [value]="filterItem.name"> Value {{ i + 1 }}
+    </label>
+  </div>
+</div>
 
+<pre>Selected items: <span *ngFor="let filterItem of checked()" style="padding-right:10px;">{{ filterItem.value }}</span></pre>-->
+<input [(ngModel)]="searchText" placeholder="Search for a course " class="searchBar"><i class="fas fa-search icon"></i>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="courses">
+
   <thead>
     <tr>
-      <th>title</th>
-      <th>description</th>
+      <!--<th>title</th>-->
+      <!--<th>description</th>-->
     </tr>
   </thead>
+
   <tbody>
-    <tr *ngFor="let course of courses | paginate: { itemsPerPage: 10, currentPage: p }">
-      <td>{{ course.id }}</td>
-      <td>{{ course.course.name }}
+    <tr *ngFor="let course of courses | paginate: { itemsPerPage: 5, currentPage: p } | filter : searchText | filtercourse: { property: ''} : checked() : false">
+      <!--<td>{{ course.id }}</td>-->
+      <td>
+        <b>{{ course.course.name }}</b>
         <div>
           {{ course.course.description }}
         </div>

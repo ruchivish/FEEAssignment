@@ -36,11 +36,13 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\Course\course.component.ts" />
+    <None Remove="ClientApp\src\app\Course\filterByCourse.pipe.ts" />
     <None Remove="Services\CourseServices.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\Course\course.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Course\filterbycourse.pipe.ts" />
     <TypeScriptCompile Include="Services\CourseServices.ts" />
   </ItemGroup>
 

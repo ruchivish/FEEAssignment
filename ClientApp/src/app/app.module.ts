@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +13,8 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { CourseComponent } from './Course/course.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipe } from './Course/filter.pipe';
+import { FilterbycoursePipe} from './Course/filterByCourse.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    CourseComponent
+    CourseComponent,
+    FilterPipe,
+    FilterbycoursePipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
