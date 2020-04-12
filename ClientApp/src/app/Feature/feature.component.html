@@ -1,6 +1,6 @@
-<h1 id="tableLabel">Courses Catalog</h1>
+<h1 id="tableLabel">Features</h1>
 
-<p *ngIf="!courses"><em>Loading...</em></p>
+<p *ngIf="!features"><em>Loading...</em></p>
 <!--<div class="form form-inline">
   <div *ngFor="let filterItem of courses; let i = index;" class="form-check" style="padding-right:20px;">
     <label class="form-check-label">
@@ -10,8 +10,8 @@
 </div>
 
 <pre>Selected items: <span *ngFor="let filterItem of checked()" style="padding-right:10px;">{{ filterItem.value }}</span></pre>-->
-<input [(ngModel)]="searchText" placeholder="Search for a course " class="searchBar"><i class="fas fa-search icon"></i>
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="courses">
+<input [(ngModel)]="searchText" placeholder="Search for a filter " class="searchBar"><i class="fas fa-search icon"></i>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="features">
 
   <thead>
     <tr>
@@ -21,12 +21,11 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let course of courses | filter : searchText | filtercourse: { property: ''} : checked() : false | paginate: { itemsPerPage: 5, currentPage: p } ">
-      <!--<td>{{ course.id }}</td>-->
+    <tr *ngFor="let feature of features | filterfeature : searchText | filterbyfeature: { property: ''} : checked() : false | paginate: { itemsPerPage: 5, currentPage: p } ">
       <td>
-        <b>{{ course.course.name }}</b>
+        <b>{{ feature.name }}</b>
         <div>
-          {{ course.course.description }}
+          {{ feature.description }}
         </div>
       </td>
     </tr>

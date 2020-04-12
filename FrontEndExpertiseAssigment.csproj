@@ -37,12 +37,22 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\Course\course.component.ts" />
     <None Remove="ClientApp\src\app\Course\filterByCourse.pipe.ts" />
+    <None Remove="ClientApp\src\app\Feature\feature.component.ts" />
+    <None Remove="ClientApp\src\app\Feature\filterbyfeature.pipe.ts" />
+    <None Remove="ClientApp\src\app\services\course.service.ts" />
+    <None Remove="ClientApp\src\app\services\feature.service.ts" />
     <None Remove="Services\CourseServices.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\Course\course.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Course\filterbycourse.pipe.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Feature\feature.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Feature\filterbyfeature.pipe.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\services\course.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\feature.service.ts" />
     <TypeScriptCompile Include="Services\CourseServices.ts" />
   </ItemGroup>
 

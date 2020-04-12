@@ -1,0 +1,47 @@
+[
+  {
+    "name": "EnableMSLearningCampus",
+    "Description": "If enabled, mslearningcampus.com will be used as a learning page",
+    "IsEnabled": true,
+    "CreatedBy": "Admin",
+    "LastUpdatedBy": "Admin",
+    "CreatedDate": "10/8/19, 2:57 PM",
+    "LastUpdatedDate": "10/8/19, 2:57 PM"
+  },
+  {
+    "name": "EnableLanding",
+    "Description": "If enabled, users can see the new PSE landing page",
+    "IsEnabled": true,
+    "CreatedBy": "Admin",
+    "LastUpdatedBy": "Admin",
+    "CreatedDate": "10/8/19, 2:57 PM",
+    "LastUpdatedDate": "10/8/19, 2:57 PM"
+  },
+  {
+    "name": "EnableNextStepEmail",
+    "Description": "If enabled, we will trigger a next step email from services hub to newly registered users",
+    "IsEnabled": true,
+    "CreatedBy": "Admin",
+    "LastUpdatedBy": "Admin",
+    "CreatedDate": "10/8/19, 2:57 PM",
+    "LastUpdatedDate": "10/8/19, 2:57 PM"
+  },
+  {
+    "name": "SurveyExcelReporting",
+    "Description": "If Enabled, it lets you download the Survey Excel based Report from Assessments Page",
+    "IsEnabled": true,
+    "CreatedBy": "Admin",
+    "LastUpdatedBy": "Admin",
+    "CreatedDate": "10/8/19, 2:57 PM",
+    "LastUpdatedDate": "10/8/19, 2:57 PM"
+  },
+  {
+    "name": "CleanExistingGroupClaims",
+    "Description": "Cleans group claims off the principal",
+    "IsEnabled": true,
+    "CreatedBy": "Admin",
+    "LastUpdatedBy": "Admin",
+    "CreatedDate": "10/8/19, 2:57 PM",
+    "LastUpdatedDate": "10/8/19, 2:57 PM"
+  }
+]

@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Course, Courses } from 'src/app/Course/course.component'
+
 @Pipe({
-  name: 'filtercourse'
+  name: 'filterbyfeature'
 })
-export class FilterbycoursePipe implements PipeTransform {
+export class FilterbyfeaturePipe implements PipeTransform {
   transform(items: any, filter: any, filterItems: Array<any>, isAnd: boolean): any {
   //  console.log('Filtering ..');
     if (filter && Array.isArray(items) && filterItems) {

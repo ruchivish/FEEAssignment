@@ -15,6 +15,11 @@ import { CourseComponent } from './Course/course.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipe } from './Course/filter.pipe';
 import { FilterbycoursePipe} from './Course/filterByCourse.pipe';
+import { FilterfeaturePipe } from './Feature/filterfeature.pipe';
+import { FilterbyfeaturePipe } from './Feature/filterbyfeature.pipe';
+import { FeatureComponent } from './Feature/feature.component';
+import { CourseService } from './services/course.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,11 +29,15 @@ import { FilterbycoursePipe} from './Course/filterByCourse.pipe';
     CounterComponent,
     FetchDataComponent,
     CourseComponent,
+    FeatureComponent,
     FilterPipe,
-    FilterbycoursePipe
+    FilterbycoursePipe,
+    FilterfeaturePipe,
+    FilterbyfeaturePipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    CommonModule,
     HttpClientModule,
     NgxPaginationModule,
     FormsModule,
@@ -38,9 +47,11 @@ import { FilterbycoursePipe} from './Course/filterByCourse.pipe';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'fetch-course', component: CourseComponent, canActivate: [AuthorizeGuard] },
+      { path: 'fetch-feature', component: FeatureComponent, canActivate: [AuthorizeGuard] },
     ])
   ],
   providers: [
+    CourseService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
